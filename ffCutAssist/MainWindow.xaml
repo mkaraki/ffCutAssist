@@ -1,0 +1,29 @@
+﻿<Window x:Class="ffCutAssist.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ffCutAssist"
+        xmlns:wpf1="clr-namespace:LibVLCSharp.WPF;assembly=LibVLCSharp.WPF"
+        mc:Ignorable="d"
+        Title="ffCutAssist" Height="450" Width="800" KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="195*"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1"/>
+        <wpf1:VideoView x:Name="vlcP" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="1000*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" x:Name="textCmd"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="-ss 0 -t 0" MouseLeftButtonDown="textCmd_MouseLeftButtonDown" />
+            <TextBlock Grid.Row="1" x:Name="textMode"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="Scope: Start" MouseLeftButtonDown="textCmd_MouseLeftButtonDown" />
+            <TextBlock Grid.Row="2" x:Name="textInstr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="Instructions" />
+        </Grid>
+    </Grid>
+</Window>
